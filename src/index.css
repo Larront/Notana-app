@@ -1,6 +1,47 @@
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  margin: auto;
-  max-width: 38rem;
-  padding: 2rem;
+.navbar{
+  grid-area: navbar;
 }
+
+.left-col{
+  grid-area: left-col;
+  text-align: center;
+}
+
+.init-tracker{
+  grid-area: init-tracker;
+}
+
+.media-player{
+  grid-area: media-player;
+}
+
+#layout-wrapper{
+  display: grid;
+  min-height: 100vh;
+  width: auto;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 1fr 14fr 5fr; 
+  grid-template-areas: 
+    "navbar navbar"
+    "left-col init-tracker"
+    "left-col media-player";
+}
+
+.init-frame{
+  display: flex;
+  flex-direction: row;
+}
+
+.pdf-wrapper{
+  min-height: 95%;
+  width: auto;
+  margin: 0 auto;
+}
+
+/* html{
+  height: 100%
+}
+
+body {
+  min-height: 100%;
+} */

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css">
+
+    <title>Hello World!</title>
+
+</head>
+
+<body>
+    <div id="layout-wrapper">
+        <div class="navbar">Navbar</div>
+        <div class="left-col">
+            <section id="pdf-wrapper" class="pdf-wrapper">
+                <canvas id="pdf-render"></canvas>
+                <div id="button-row">
+                    <button id="prev-page">Prev Page</button>
+                    <span name="page-info">
+                        Page <span id="page-num"></span> of <span id="page-count"></span>
+                    </span>
+                    <button id="next-page">Next Page</button>
+                </div>
+            </section>
+        </div>
+        <div class="init-tracker">
+            <div class="init-header">
+                <nav class="navbar">
+                    <ul class="nav nav-tabs encounter-list" data-encounters></ul>
+                    <form action="" data-new-encounter-form class="form-inline my-2 my-lg-0">
+                        <input type="text" class="form-control mr-sm-2 new-list" placeholder="Add Encounter"
+                            data-new-encounter-input>
+                    </form>
+                </nav>
+
+                <div class="menu-bar">
+                    <button class="btn btn-primary"><i class="fas fa-plus"></i></button>
+                    <button class="btn btn-danger" data-delete-encounter-button><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+
+            <div class="init-body container" data-monsters-display-container>
+                <div class="init-title-header row">
+                    <div class="col"><strong>Initiative</strong></div>
+                    <div class="col-6"><strong>Name</strong></div>
+                    <div class="col"><strong>HP</strong></div>
+                </div>
+
+                <div class="init-holder container" data-monsters></div>
+            </div>
+
+        </div>
+        <div class="media-player">Media Player</div>
+    </div>
+
+    <template id="init-item-template">
+        <div class="init-item row">
+            <div class="col init-item-init"></div>
+            <p class="col-6"><strong class="init-item-name"></strong></p>
+            <form class="col"><input type="number" class="init-item-hp"></form>
+        </div>
+    </template>
+
+    <!-- CDN Tags -->
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e15611d502.js" crossorigin="anonymous"></script>
+
+    <!-- Main Scripts -->
+    <script src="pdf_viewer.js"></script>
+    <script src="mainWindow.js"></script>
+</body>
+
+</html>
