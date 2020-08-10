@@ -42,8 +42,27 @@
                 </nav>
 
                 <div class="menu-bar">
-                    <button class="btn btn-primary"><i class="fas fa-plus"></i></button>
+                    <button class="btn btn-primary add-monster-menu-button"><i class="fas fa-plus"></i></button>
                     <button class="btn btn-danger" data-delete-encounter-button><i class="fas fa-times"></i></button>
+                </div>
+                <div class="add-monster" style="display: none;">
+                    <form data-new-monster-form>
+                        <div class="form-row">
+                            <div class="col">
+                                <input data-new-monster-name-input type="text" id="init-name" class="form-control"
+                                    placeholder="Name">
+                            </div>
+                            <div class="col">
+                                <input data-new-monster-hp-input type="text" id="init-hp" class="form-control"
+                                    placeholder="HP">
+                            </div>
+                            <div class="col">
+                                <input data-new-monster-init-input type="text" id="init-init" class="form-control"
+                                    placeholder="Initiative">
+                            </div>
+                            <button class="btn btn-light">Add Monster</button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
@@ -71,9 +90,7 @@
 
     <!-- CDN Tags -->
     <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
@@ -84,7 +101,7 @@
 
     <!-- Main Scripts -->
     <script src="pdf_viewer.js"></script>
-    <script src="mainWindow.js"></script>
+    <script src="init_manager.js"></script>
 </body>
 
 </html>

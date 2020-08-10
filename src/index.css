@@ -38,10 +38,11 @@
   margin: 0 auto;
 }
 
-/* html{
-  height: 100%
+.add-monster{
+  overflow: hidden;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
 }
-
-body {
-  min-height: 100%;
-} */

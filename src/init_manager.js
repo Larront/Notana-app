@@ -5,8 +5,19 @@ const deleteEncounterButton = document.querySelector('[data-delete-encounter-but
 const monsterDisplayContainer = document.querySelector('[data-monsters-display-container]')
 const monsterContainer = document.querySelector('[data-monsters]')
 const initItemTemplate = document.getElementById('init-item-template')
+const newMonsterForm = document.querySelector('[data-new-monster-form]')
+const newMonsterName = document.querySelector('[data-new-monster-name-input]')
+const newMonsterHP = document.querySelector('[data-new-monster-hp-input]')
+const newMonsterInit = document.querySelector('[data-new-monster-init-input]')
+
 
 //TODO: Add pull fucntion for encounter list and active encoutner from save file
+
+$(document).ready(function () {
+    $(".add-monster-menu-button").click(function () {
+        $(".add-monster").slideToggle(300);
+    });
+});
 
 let encounters = []
 let selectedEncounterID = null
@@ -34,16 +45,40 @@ newEncounterForm.addEventListener('submit', e => {
     render()
 })
 
+newMonsterForm.addEventListener('submit', e => {
+    e.preventDefault()
+    const monsterName = newMonsterName.value
+    const monsterHP = newMonsterHP.value
+    const monsterInit = newMonsterInit.value
+    if (monsterName == null || monsterName === '') return
+    if (monsterHP == null || monsterHP === '') return
+    if (monsterInit == null || monsterInit === '') return
+
+    const monster = createMonster(monsterName, monsterHP, monsterInit)
+    newMonsterName.value = null
+    newMonsterHP.value = null
+    newMonsterInit.value = null
+
+    const selectedEncounter = encounters.find(encounter => encounter.id === selectedEncounterID)
+    selectedEncounter.monsters.push(monster)
+    $(".add-monster").slideToggle(300)
+    render()
+})
+
 function createEncounter(encounterName) {
     return {
-        id: Date.now().toString(), name: encounterName, monsters: [{
-            id: 1,
-            name: 'Syndar Deofric',
-            initiative: 12,
-            hp: 80,
-            states: [],
-            unconscious: false
-        }]
+        id: Date.now().toString(), name: encounterName, monsters: []
+    }
+}
+
+function createMonster(name, hp, init) {
+    return {
+        id: Date.now().toString(),
+        name: name,
+        initiative: init,
+        hp: hp,
+        states: [],
+        unconscious: false
     }
 }
 
