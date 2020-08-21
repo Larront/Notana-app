@@ -1,18 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="columns">
+      <pdf-viewer class="column"></pdf-viewer>
+      <div class="column">
+          <init-tracker></init-tracker>
+          <music-player></music-player>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import PdfViewer from '@/components/PdfViewer'
+import InitTracker from '@/components/InitTracker'
+import MusicPlayer from '@/components/MusicPlayer'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+      PdfViewer,
+      InitTracker,
+      MusicPlayer,
+    
+  },
 }
 </script>
 
