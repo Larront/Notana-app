@@ -1,29 +1,28 @@
 <template>
   <div id="app">
     <div class="columns">
-      <pdf-viewer class="column"></pdf-viewer>
+      <pdf-viewer class="column is-three-fifths"></pdf-viewer>
       <div class="column">
-          <init-tracker></init-tracker>
-          <music-player></music-player>
+        <init-tracker></init-tracker>
+        <music-player></music-player>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import PdfViewer from '@/components/PdfViewer'
-import InitTracker from '@/components/InitTracker'
-import MusicPlayer from '@/components/MusicPlayer'
+import PdfViewer from "@/components/PdfViewer";
+import InitTracker from "@/components/InitTracker";
+import MusicPlayer from "@/components/MusicPlayer";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-      PdfViewer,
-      InitTracker,
-      MusicPlayer,
-    
+    PdfViewer,
+    InitTracker,
+    MusicPlayer,
   },
-}
+};
 </script>
 
 <style>
