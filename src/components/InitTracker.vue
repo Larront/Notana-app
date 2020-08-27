@@ -2,8 +2,8 @@
   <div id="init-tracker">
     <b-tabs v-model="activeEncounter">
       <template v-for="encounter in encounters">
-        <b-tab-item :key="encounter.id" :value="encounter.id" :label="encounter.label">
-          <init-item v-for="monster in encounter.monsters" :key="monster.id"></init-item>
+        <b-tab-item :key="encounter.id" :value="encounter.id" :label="encounter.name">
+          <init-item v-for="monster in encounter.monsters" :key="monster.id" :monster="monster"></init-item>
         </b-tab-item>
       </template>
     </b-tabs>

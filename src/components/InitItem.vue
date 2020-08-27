@@ -1,7 +1,15 @@
-<template></template>
+<template>
+<div class="monster-display">
+    <h1 class="name">{{monster.name}}</h1>
+</div>
+</template>
 
 <script>
-export default {};
+export default {
+    props: {
+        monster: Object,
+    }
+};
 </script>
 
 <style>
