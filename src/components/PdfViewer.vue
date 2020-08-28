@@ -9,13 +9,6 @@
     ></pdf>
     <input v-model.number="page" type="number" style="width: 5em" />
     /{{numPages}}
-    <div style="width: 50%">
-      <div
-        v-if="loadedRatio > 0 && loadedRatio < 1"
-        style="background-color: green; color: white; text-align: center"
-        :style="{ width: loadedRatio * 100 + '%' }"
-      >{{ Math.floor(loadedRatio * 100) }}%</div>
-    </div>
   </div>
 </template>
 

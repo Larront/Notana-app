@@ -1,14 +1,16 @@
 <template>
-  <div id="init-tracker">
-    <b-tabs v-model="activeEncounter">
+  <div id="init-tracker" class="columns">
+      <div id="sidebar" class="is-1">
+          <b-button expanded>Add Monster</b-button>
+          <b-button expanded>Delete Encounter</b-button>
+      </div>
+    <b-tabs v-model="activeEncounter" class="column">
       <template v-for="encounter in encounters">
         <b-tab-item :key="encounter.id" :value="encounter.id" :label="encounter.name">
-          <init-item v-for="monster in encounter.monsters" :key="monster.id" :monster="monster"></init-item>
+          <init-item v-for="monster in encounterMonsters(encounter)" :key="monster.id" :monster="monster"></init-item>
         </b-tab-item>
       </template>
     </b-tabs>
-    <div>Monster Options</div>
-    <div>Monster List</div>
   </div>
 </template>
 
@@ -26,7 +28,12 @@ export default {
     };
   },
   computed: {
-    ...mapState(["encounters"]),
+    ...mapState(['monsters', 'encounters']),
   },
+  methods: {
+        encounterMonsters(encounter) {
+            return encounter.monsters.map(monsterId => this.monsters[monsterId])
+        }
+    }
 };
 </script>
